@@ -23,9 +23,7 @@ public class ArrCharOps {
         System.out.println(compareTo("Zoo", "zoo"));
         System.out.println(hashCode(arr1));
         System.out.println(hashCode(arr2));
-
-
-
+        
     }
 
     /** Prints the given array of characters, and moves the cursor to the next line.
@@ -47,7 +45,20 @@ public class ArrCharOps {
      *  returns true; Otherwise returns false.
      */
     public static boolean equals(char[] arr1, char[] arr2) {
-        return arr1 == arr2;
+        // Check if the arrays have the same length
+        if (arr1.length != arr2.length) {
+            return false;
+        }
+
+        // Compare elements at each index
+        for (int i = 0; i < arr1.length; i++) {
+            if (arr1[i] != arr2[i]) {
+                return false; // Return false if any mismatch is found
+            }
+        }
+
+        // If all elements match, return true
+        return true;
     }
 
     /** Returns the index within the given array of the first occurrence of the given character.
